@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>betterhacker.news</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 30px;
+        }
+
+        .column {
+            flex-basis: 48%;
+        }
+
+        .topic {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+        }
+
+        .emoji {
+            margin-right: 5px;
+            font-size: 0.8em;
+        }
+
+        .score {
+            font-size: 0.8em;
+            color: gray;
+            margin-left: 5px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .main-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: rgba(128, 128, 128, 0.8);
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .footer-link {
+            color: #007bff;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .column {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-title">betterhacker.news<div class="main-subtitle">Hackernews Top Stories grouped using modern LLMs</div></div>
+        
+        {% for topic, data in articles.items() %}
+            <div class="column">
+                <h2 class="topic">{{ topic }}</h2>
+                <ul>
+                    {% for title, article in data.items() %}
+                        <li>
+                            <div class="title">
+                                <a href="{{ article.url }}">{{ title }}</a>
+                                <span class="score">{{ article.score }} <span class="emoji">❤️</span></span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="footer">
+        Created by <a href="https://olegkhomenko.me" class="footer-link">Oleg Khomenko</a>
+    </div>
+</body>
+</html>
