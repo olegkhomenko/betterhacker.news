@@ -44,4 +44,4 @@ def get_articles(request: Request):
 
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="localhost", port=5001, reload=True)
+    uvicorn.run("app:app", host="127.0.0.1", port=5556, reload=True)

@@ -12,3 +12,14 @@ vim .env
 pip3 install -r requirements.txt
 python3 app/app.py
 ``` 
+
+Then `uvicorn`
+```bash
+uvicorn app.app:app --port 5556
+```
+
+Then `worker`
+```bash
+# Run in tmux
+while true; do python3 worker.py; ls data/*; sleep 12h; done
+```
