@@ -103,17 +103,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="main-title">betterhacker.news<div class="main-subtitle">Hackernews Top Stories grouped using modern LLMs</div></div>
+        <div class="main-title">betterhacker.news<div class="main-subtitle">Hackernews Top Stories grouped using modern LLMs (ChatGPT)</div></div>
         
         {% for topic, data in articles.items() %}
             <div class="column">
-                <h2 class="topic">{{ topic }}</h2>
+                <h2 class="topic">{{ topic }} // {{ topic_scores[topic] }} ❤️‍🔥</h2>
                 <ul>
                     {% for title, article in data.items() %}
                         <li>
                             <div class="title">
                                 <a href="{{ article.url }}">{{ title }}</a>
-                                <span class="score">{{ article.score }} <span class="emoji">❤️</span></span>
+                                <span class="score"> {{ article.score }} <span class="emoji">❤️</span></span>
                             </div>
                         </li>
                     {% endfor %}
