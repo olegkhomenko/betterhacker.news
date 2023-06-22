@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <style>
+    .st0{fill:#8B008B;}
+    .st1{fill:#8B008B;}
+    .st2{fill:#FFFFFF;}
+    .st3{fill:#8B008B;}
+    .st4{font-family:Helvetica-bold;}
+    .st5{font-size:80px;}
+  </style>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <g id="Layer_1-2">
+    <path class="st0" d="M5,1h90c2.8,0,5,2.2,5,5v90c0,2.8-2.2,5-5,5H5c-2.8,0-5-2.2-5-5V6C0,3.2,2.2,1,5,1L5,1z"/>
+    <path class="st1" d="M5,1h90c2.8,0,5,2.2,5,5v90c0,2.8-2.2,5-5,5H5c-2.8,0-5-2.2-5-5V6C0,3.2,2.2,1,5,1L5,1z"/>
+    <g>
+      <polygon class="st2" points="15,24 25,24 25,14 34,14 34,24 44,24 44,33 34,33 34,44 25,44 25,33 15,33"/>
+      <polygon class="st2" points="66,24 76,24 76,14 85,14 85,24 95,24 95,33 85,33 85,44 76,44 76,33 66,33"/>
+    </g>
+    <text transform="matrix(1 0 0 1 300 400)" class="st3 st4 st5">betterhacker.news</text>
+  </g>
+</svg>
