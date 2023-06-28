@@ -57,7 +57,7 @@ def get_items(list_of_items: List[int], batch_size=12):
     return results
 
 
-def get_openai_prompt(topics) -> Tuple[dict, dict]:
+def get_openai_prompt(topics: List[str]) -> Tuple[dict, dict]:
     system_message = {
         "role": "system",
         "content": (
@@ -126,7 +126,7 @@ def betterhacker_news_worker():
     data = {}
     for r in results:
         if "url" not in r or "score" not in r:
-            print("Skip")
+            print("Skip: ", r)
             continue
         data[r["title"]] = {"url": r["url"], "score": r["score"]}
 

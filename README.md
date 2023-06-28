@@ -10,7 +10,6 @@ vim .env
 # -> OPENAI_API_KEY=sk-7xxx7IVfRkqeoxxxxvdDT3BlbkxxVi23VpwdnUO7fIo1D9
 
 pip3 install -r requirements.txt
-python3 app/app.py
 ``` 
 
 Then `uvicorn`
