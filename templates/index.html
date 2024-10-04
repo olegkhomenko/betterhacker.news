@@ -13,6 +13,8 @@
     </script>
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="stylesheet" href="static/styles.css">
+    <!-- Add this line to include the Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&display=swap" rel="stylesheet">
     <meta property="og:title" content="betterhacker.news">
     <meta property="og:description" content="It is like hackernews, but better">
     <meta property="og:image" content="https://betterhacker.news/static/og_image.svg">
@@ -23,7 +25,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="main-title">betterhacker.news<div class="main-subtitle">Hackernews Top Stories grouped using modern LLMs (ChatGPT)</div></div>
+        <div class="main-title">
+            <span class="better">better</span><span class="hacker">hacker</span><span class="news">.news</span>
+            <div class="main-subtitle">Hackernews Top Stories grouped using modern LLMs (ChatGPT)</div>
+        </div>
         
         {% for topic, data in articles.items() %}
             <div class="column">
