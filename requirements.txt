@@ -3,5 +3,5 @@ fastapi
 pydantic
 jinja2
 uvicorn
-openai
 dotenv
+openai==0.28
