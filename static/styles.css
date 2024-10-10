@@ -17,7 +17,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 .column {
@@ -58,17 +58,45 @@ ul {
 }
 
 li {
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 15px;
+  padding: 15px;
   background-color: var(--secondary-color);
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 14px;
 }
 
 li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+}
+
+/* New button styles */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 102, 255, 0.2);
+  background-color: #0052CC;
+}
+
+.button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 102, 255, 0.2);
 }
 
 .title {
@@ -77,6 +105,7 @@ li:hover {
   justify-content: space-between;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-size: 14px;
 }
 
 li:hover .title {
@@ -98,23 +127,24 @@ li:hover .title {
   font-family: 'Archivo', sans-serif;
   font-size: 48px;
   font-weight: 800;
-  text-align: center;
-  margin-bottom: 20px;
   line-height: 1;
   background: linear-gradient(90deg, #000000, #0066FF, #000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: gradient 5s ease infinite;
+  margin-bottom: 10px;
 }
 
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -177,6 +207,7 @@ a:hover {
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -212,3 +243,90 @@ a:hover {
     font-size: 24px;
   }
 }
+
+/* New list-span class */
+.list-span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.list-span li {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 16px;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.list-span li:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ... existing styles ... */
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .column {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+/* Update navbar styles */
+.navbar {
+  margin-top: 20px;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.nav-item.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* ... rest of the existing styles ... */
