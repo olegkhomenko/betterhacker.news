@@ -1,18 +1,19 @@
 import asyncio
+import datetime
 import json
 import re
 from typing import List, Tuple
 
 import openai
 import requests
-from pydantic import BaseSettings
-import datetime
+from openai import OpenAI
+from pydantic_settings import BaseSettings
 
 from app.helpers import process_urls
 
 
 class Settings(BaseSettings):
-    """This config is a main config"""
+    """The main settings for the application."""
 
     OPENAI_API_KEY: str = "OPENAI_API_KEY"
     PORT: int = 5001
@@ -21,10 +22,11 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+        extra = "ignore"
 
 
 settings = Settings()
-openai.api_key = settings.OPENAI_API_KEY
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 
 def get_topstories(max_stories=30):
@@ -87,13 +89,12 @@ def betterhacker_news_worker():
 
     # Working with OpenAI
     s_m, u_m = get_openai_prompt(topics=topics)  # system & user messages
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = client.chat.completions.create(
         messages=[s_m, u_m],
-        max_tokens=2200,
+        model="gpt-3.5-turbo",
     )
 
-    res = response["choices"][0]["message"]["content"].split("\n")
+    res = response.choices[0].message.content.split("\n")
 
     # Parse results
     current_topic = None

@@ -4,4 +4,5 @@ pydantic
 jinja2
 uvicorn
 dotenv
-openai==0.28
+openai
+pydantic-settings
